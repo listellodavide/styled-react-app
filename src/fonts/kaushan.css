@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./KaushanScript-Regular.ttf')  format('truetype');
+    /*
+    other fonts format definitions import for reference
+    url('webfont.eot') format('embedded-opentype'), 
+    url('webfont.woff') format('woff'), 
+    url('webfont.woff2') format('woff2'),
+    url('webfont.ttf') format('truetype'), 
+    url('webfont.svg') format('svg'); 
+    */
+  }
