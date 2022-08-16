@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { DatePicker, LocalizationProvider } from "@mui/lab";
 import DateFnsUtils from "@date-io/date-fns";
+import Typography from "@mui/material/Typography";
 import "./app.css";
 import {ButtonCustom} from 'components/common';
 
@@ -12,29 +13,45 @@ import CssBaseline from "@mui/material/CssBaseline";
 import darkScrollbar from "@mui/material/darkScrollbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { fontWeight } from "@mui/system";
+import Paragraph from "./Paragraph";
+import Silkscreen from "../fonts/Silkscreen-Regular.ttf";
+import NotoSans from "../fonts/NotoSans-Regular.ttf";
 /* import moment from "moment"; */
 
-const theme = createTheme({
+const themeTwo = createTheme({
+  typography: {
+    fontFamily: "Silkscreen Regular"
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        "@font-face": {
+          fontFamily: "Silkscreen Regular",
+          src: `url(${Silkscreen}) format("truetype")`
+        },
         body: {
-          ...darkScrollbar(),
-          color: "#212529",
-          backgroundColor: "#E0E0E0",
-          "& h1": {
-            color: "#FF6666"
-          },
-          "& p": {
-            margin: 0,
-            color: "#FF6666",
-            typography: {
-              fontFamily: ['"Helvetica Neue"',  '"Kaushan Script"'].join(","),
-            }
-          },
-          "& a": {
-            fontWeight: "bold"
-          }
+          fontSize: "3rem",
+          color: "#1E90FF"
+        }
+      }
+    }
+  }
+});
+
+const themeOne = createTheme({
+  typography: {
+    fontFamily: "NotoSans Regular"
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "@font-face": {
+          fontFamily: "NotoSans Regular",
+          src: `url(${NotoSans}) format("truetype")`
+        },
+        body: {
+          fontSize: "3rem",
+          color: "#1E90FF"
         }
       }
     }
@@ -44,9 +61,9 @@ const theme = createTheme({
 export default function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themeOne}>
         <CssBaseline />
-        <p>This is a sentence with custom fonts</p>
+        <Typography variant="caption">This is a sentence with custom fonts</Typography>
         <Button variant="outlined" startIcon={<DeleteIcon />}>
           Delete
         </Button>
@@ -79,6 +96,7 @@ function CustomDatePicker() {
         onChange={(value) => setDate(value)}
         renderInput={(params) => <TextField {...params} fullWidth />}
       />
+      <Paragraph></Paragraph>
     </>
   );
 }
