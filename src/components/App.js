@@ -38,7 +38,7 @@ const themeTwo = createTheme({
   }
 });
 
-const themeOne = createTheme({
+const themeTwo = createTheme({
   typography: {
     fontFamily: "NotoSans Regular"
   },

@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {Typography, TextField} from '@mui/material';
 import Kaushan from "../fonts/KaushanScript-Regular.ttf";
 
-const theme = createTheme({
+const themeThree = createTheme({
   typography: {
     fontFamily: "Kaushan Script"
   },
@@ -27,7 +27,7 @@ const theme = createTheme({
 const Paragraph = () => {
     return(
       <div>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themeThree}>
             <CssBaseline />
             <Typography variant="h1">Hello World h1</Typography>
             <Typography variant="body1">Some text here as body1</Typography>
